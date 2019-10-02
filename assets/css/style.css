@@ -75,7 +75,7 @@ display: inline-block;
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
 
-.flip-card:hover .flip-card-inner {
+.flip-card-inner.flipped {
   transform: rotateY(180deg);
 }
 
@@ -105,9 +105,39 @@ display: inline-block;
   transform: rotateY(180deg);
   height: 100%;
   width: 100%;
+
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .gameRow{
   display:flex;
   justify-content: center;
 }
+
+.card1{
+background-image: url("../images/css-logo.png");
+}
+
+.card2{
+  background-image: url("../images/css-logo.png");
+}
+
+
+ .card3{
+   background-image: url("../images/docker-logo.jpg");
+ }
+
+ .card4{
+background-image: url("../images/docker-logo.jpg");
+}
+
+.card5{
+  background-image: url("../images/gitHub-logo.png");
+}
+
+
+ .card6{
+   background-image: url("../images/gitHub-logo.png");
+ }
