@@ -50,7 +50,7 @@ text-align: center;
 
 }
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip card container - set the width and height to whatever you want.*/
 .flip-card {
   background-color: transparent;
   width: 150px;
@@ -140,4 +140,45 @@ background-image: url("../images/docker-logo.jpg");
 
  .card6{
    background-image: url("../images/gitHub-logo.png");
+ }
+
+ .card7{
+   background-image: url("../images/html-logo.png");
+ }
+
+ .card8{
+   background-image: url("../images/html-logo.png");
+ }
+
+ .card9{
+   background-image: url("../images/js-logo.png");
+ }
+
+ .card10{
+   background-image: url("../images/js-logo.png");
+ }
+
+ .card11{
+   background-image: url("../images/mysql-logo.jpg");
+ }
+ .card12{
+   background-image: url("../images/mysql-logo.jpg");
+ }
+ .card13{
+   background-image: url("../images/node-logo.png");
+ }
+ .card14{
+   background-image: url("../images/node-logo.png");
+ }
+ .card15{
+   background-image: url("../images/php-logo.jpeg");
+ }
+ .card16{
+   background-image: url("../images/php-logo.jpeg");
+ }
+ .card17{
+   background-image: url("../images/react-logo.png");
+ }
+ .card18{
+   background-image: url("../images/react-logo.png");
  }
