@@ -13,10 +13,10 @@ var secondflipVar = null;
 
 var maxMatches = 2;
 
-var attempts = null;
+var attempts = 0;
 var gamesPlayed = 0;
 
-var accuracy = null;
+var accuracy = 0;
 
 
 
@@ -35,11 +35,33 @@ accuracy.toFixed(2);
 function displayStats(){
 var showAccuracy = calculateAccuracy();
 
+  if (isNaN(accuracy)) {
+    accuracy = 0;
+  }
+
   $(".val1").text(gamesPlayed);
 
   $(".val2").text(attempts);
 
   $(".val3").text(accuracy.toFixed(0) + "%");
+
+
+
+
+}
+
+function flipBack(){
+  $(".modal").css("display", "");
+  $(".flip-card-inner").removeClass("flipped");
+
+}
+
+function resetStats(){
+matches = 0;
+attempts = 0;
+accuracy = 0;
+
+displayStats();
 
 
 }
@@ -82,7 +104,8 @@ $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
         console.log("you win");
 
           gamesPlayed++;
-          displayStats();
+
+          resetStats();
 
     $(".modal").css("display", "block");
 
