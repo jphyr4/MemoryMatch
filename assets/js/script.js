@@ -2,14 +2,45 @@ $(document).ready(initializeApp)
 
 var firstCardClicked = null;
 var secondCardClicked = null;
+
 var matches = null;
+
 var match1 = null;
 var match2 = null;
+
 var flipVar = null;
 var secondflipVar = null;
 
+var maxMatches = 2;
+
+var attempts = null;
+var gamesPlayed = 0;
+
+var accuracy = null;
+
+
+
 function initializeApp(){
 $(".flip-card").on("click", flipCard);
+
+}
+
+function calculateAccuracy(){
+accuracy = (matches/attempts)*100;
+accuracy.toFixed(2);
+  return accuracy;
+
+}
+
+function displayStats(){
+var showAccuracy = calculateAccuracy();
+
+  $(".val1").text(gamesPlayed);
+
+  $(".val2").text(attempts);
+
+  $(".val3").text(accuracy.toFixed(0) + "%");
+
 
 }
 
@@ -22,7 +53,7 @@ $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
 
   if(firstCardClicked === null){
     firstCardClicked = $(event.currentTarget).find(".flip-card-back");
-    console.log('first clicked');
+
     console.log(firstCardClicked.css("background-image"));
 
     match1 = firstCardClicked.css("background-image");
@@ -41,8 +72,24 @@ $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
 
     if (match1 === match2) {
       console.log("this matches");
-
+      attempts++;
       matches++;
+
+      displayStats();
+
+
+      if(matches === maxMatches){
+        console.log("you win");
+
+          gamesPlayed++;
+          displayStats();
+
+    $(".modal").css("display", "block");
+
+
+
+
+      }
 
       firstCardClicked = null;
       secondCardClicked = null;
@@ -53,19 +100,20 @@ $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
     } else if (match1 === null || match2 === null) {
 
 
-      console.log("no");
+
 
 
 
     } else if (match1 !== match2) {
-      console.log('hello');
+
       setTimeout(function () {
         $(flipVar).toggleClass("flipped");
         $(secondflipVar).toggleClass("flipped");
 
       }, 1000);
 
-
+      attempts++;
+      displayStats();
 
       firstCardClicked = null;
       secondCardClicked = null;
@@ -81,8 +129,8 @@ $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
 
   }
 
-
-
+console.log(attempts);
+console.log(gamesPlayed);
   }
 
 
