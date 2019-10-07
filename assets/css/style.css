@@ -1,38 +1,62 @@
 body{
   margin:0;
   padding:0;
+  background-image: url("../images/misfitsBack.jpg");
+  background-position: center center;
+background-size: fixed;
+
 }
 
 * {
   box-sizing: border-box;
 }
 
+@font-face{
+  font-family: "Misfits";
+  src: url("../MISFITS_.TTF")
+
+}
+
 .header {
   padding: 20px;
   text-align: center;
-  background: #1abc9c;
   color: white;
-  font-size: 30px;
+  font-size: 35px;
+  font-family: Misfits;
 }
 
 .col1{
-  width: 25%;
+  width: 20%;
   background-color: red;
 text-align: center;
 display: flex;
 flex-direction: column;
+background-image: url("../images/misfits.png");
+background-position: center;
+background-size: cover;
+justify-content: space-around;
 }
 
 .col2{
-  width: 75%;
-  background-color: blue;
+  width: 80%;
+  background-color: rgb(0, 0, 0, .5);
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
 
 }
 
 .column {
   float: left;
   padding: 10px;
-  height: 475px; /* Should be removed. Only for demonstration */
+  height: 575px;
+   /* Should be removed. Only for demonstration */
+}
+
+.row{
+  margin: 0 30px;
+
 }
 
 .row:after {
@@ -46,11 +70,10 @@ flex-direction: column;
   height: 50px;
   border: 3px solid black;
   padding: 2px;
-  margin: 5px;
+  margin: 10px;
   text-align: center;
   justify-content: center;
   align-items: center;
-
 
 
 }
@@ -96,7 +119,7 @@ display: inline-block;
 .flip-card-front {
   background-color: #bbb;
   color: black;
-  background-image: url("../images/lfz-card.jpg");
+  background-image: url("../images/misfitsCard.jpg");
 
   background-size: cover;
   background-position: 50% 50%;
@@ -122,70 +145,70 @@ display: inline-block;
 }
 
 .card1{
-background-image: url("../images/css-logo.png");
+background-image: url("../images/collection.jpg");
 }
 
 .card2{
-  background-image: url("../images/css-logo.png");
+  background-image: url("../images/walkamong.jpg");
 }
 
 
  .card3{
-   background-image: url("../images/docker-logo.jpg");
+   background-image: url("../images/static\ age_misfits.jpg");
  }
 
  .card4{
-background-image: url("../images/docker-logo.jpg");
+background-image: url("../images/collection.jpg");
 }
 
 .card5{
-  background-image: url("../images/gitHub-logo.png");
+  background-image: url("../images/collection2.jpeg");
 }
 
 
  .card6{
-   background-image: url("../images/gitHub-logo.png");
+   background-image: url("../images/fiends.jpg");
  }
 
  .card7{
-   background-image: url("../images/html-logo.png");
+   background-image: url("../images/horror.jpg");
  }
 
  .card8{
-   background-image: url("../images/html-logo.png");
+   background-image: url("../images/alive.jpeg");
  }
 
  .card9{
-   background-image: url("../images/js-logo.png");
+   background-image: url("../images/horror.jpg");
  }
 
  .card10{
-   background-image: url("../images/js-logo.png");
+   background-image: url("../images/fiends.jpg");
  }
 
  .card11{
-   background-image: url("../images/mysql-logo.jpg");
+   background-image: url("../images/walkamong.jpg");
  }
  .card12{
-   background-image: url("../images/mysql-logo.jpg");
+   background-image: url("../images/collection2.jpeg");
  }
  .card13{
-   background-image: url("../images/node-logo.png");
+   background-image: url("../images/earth.jpg");
  }
  .card14{
-   background-image: url("../images/node-logo.png");
+   background-image: url("../images/alive.jpeg");
  }
  .card15{
-   background-image: url("../images/php-logo.jpeg");
+   background-image: url("../images/legacy.jpeg");
  }
  .card16{
-   background-image: url("../images/php-logo.jpeg");
+   background-image: url("../images/static\ age_misfits.jpg");
  }
  .card17{
-   background-image: url("../images/react-logo.png");
+   background-image: url("../images/legacy.jpeg");
  }
  .card18{
-   background-image: url("../images/react-logo.png");
+   background-image: url("../images/earth.jpg");
  }
 
 
@@ -209,5 +232,9 @@ background-image: url("../images/docker-logo.jpg");
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.disabled{
+  pointer-events: none;
 }

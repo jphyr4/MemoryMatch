@@ -11,16 +11,20 @@ var match2 = null;
 var flipVar = null;
 var secondflipVar = null;
 
-var maxMatches = 2;
+var maxMatches = 9;
 
 var attempts = 0;
 var gamesPlayed = 0;
 
 var accuracy = 0;
 
+var dontFlip1 = null;
+var dontFlip2 = null;
+
 
 
 function initializeApp(){
+
 $(".flip-card").on("click", flipCard);
 
 }
@@ -53,6 +57,9 @@ var showAccuracy = calculateAccuracy();
 function flipBack(){
   $(".modal").css("display", "");
   $(".flip-card-inner").removeClass("flipped");
+  $(".flip-card").css("pointer-events", "");
+
+
 
 }
 
@@ -67,94 +74,117 @@ displayStats();
 }
 
 function flipCard(event){
-$(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
+
+    $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
+
+
+
 // flipping.toggleClass('.flip-card-inner');
   //$(event.currentTarget).find(".flip-card-inner").removeClass("flipped");
 
 
 
-  if(firstCardClicked === null){
-    firstCardClicked = $(event.currentTarget).find(".flip-card-back");
 
-    console.log(firstCardClicked.css("background-image"));
+    if (firstCardClicked === null && secondCardClicked === null) {
 
-    match1 = firstCardClicked.css("background-image");
+      dontFlip1 = $(event.currentTarget);
 
-    flipVar = $(event.currentTarget).find(".flip-card-inner");
+      firstCardClicked = $(event.currentTarget).find(".flip-card-back");
 
-  } else {
+      console.log(firstCardClicked.css("background-image"));
 
-    secondCardClicked = $(event.currentTarget).find(".flip-card-back");
-    console.log(secondCardClicked.css("background-image"));
+      match1 = firstCardClicked.css("background-image");
 
-     match2 = secondCardClicked.css("background-image");
+      flipVar = $(event.currentTarget).find(".flip-card-inner");
 
-     secondflipVar = $(event.currentTarget).find(".flip-card-inner");
+      dontFlip1.css("pointer-events", "none");
 
+    } else {
 
-    if (match1 === match2) {
-      console.log("this matches");
-      attempts++;
-      matches++;
+      dontFlip2 = $(event.currentTarget);
 
-      displayStats();
+      secondCardClicked = $(event.currentTarget).find(".flip-card-back");
+      console.log(secondCardClicked.css("background-image"));
 
+      match2 = secondCardClicked.css("background-image");
 
-      if(matches === maxMatches){
-        console.log("you win");
+      secondflipVar = $(event.currentTarget).find(".flip-card-inner");
+
+      dontFlip2.css("pointer-events", "none");
+
+      if (match1 === match2) {
+        console.log("this matches");
+        attempts++;
+        matches++;
+
+        displayStats();
+
+        dontFlip1 = null;
+        dontFlip2 = null;
+
+        if (matches === maxMatches) {
+          console.log("you win");
 
           gamesPlayed++;
 
           resetStats();
 
-    $(".modal").css("display", "block");
+          $(".modal").css("display", "block");
 
 
 
+
+        }
+
+        firstCardClicked = null;
+        secondCardClicked = null;
+
+        match1 = null;
+        match2 = null;
+
+      } else if (match1 === null || match2 === null) {
+
+
+
+
+      } else if (match1 !== match2) {
+
+
+        $(".flip-card").addClass("disabled");
+
+        dontFlip1.css("pointer-events", "");
+        dontFlip2.css("pointer-events", "");
+
+        setTimeout(function () {
+          $(flipVar).toggleClass("flipped");
+          $(secondflipVar).toggleClass("flipped");
+          //$(".flip-card").prop("disabled", false);
+          $(".flip-card").removeClass("disabled");
+        }, 1000);
+
+        attempts++;
+        displayStats();
+
+        firstCardClicked = null;
+        secondCardClicked = null;
+
+        match1 = null;
+        match2 = null;
 
       }
 
-      firstCardClicked = null;
-      secondCardClicked = null;
-
-      match1 = null;
-      match2 = null;
-
-    } else if (match1 === null || match2 === null) {
 
 
 
-
-
-
-    } else if (match1 !== match2) {
-
-      setTimeout(function () {
-        $(flipVar).toggleClass("flipped");
-        $(secondflipVar).toggleClass("flipped");
-
-      }, 1000);
-
-      attempts++;
-      displayStats();
-
-      firstCardClicked = null;
-      secondCardClicked = null;
-
-      match1 = null;
-      match2 = null;
 
     }
+}
 
 
-
-
-
-  }
 
 console.log(attempts);
 console.log(gamesPlayed);
-  }
+
 
 
 //setTimeout(function () { $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped"); }, 3000);
