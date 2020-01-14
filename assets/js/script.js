@@ -124,7 +124,7 @@ function flipCard(event){
 
           resetStats();
 
-          $(".modal").css("display", "block");
+          $(".modal").css("display", "flex");
 
 
 
