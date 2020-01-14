@@ -33,6 +33,7 @@ function calculateAccuracy(){
 accuracy = (matches/attempts)*100;
 accuracy.toFixed(2);
   return accuracy;
+  console.log(accuracy);
 
 }
 
@@ -49,7 +50,7 @@ var showAccuracy = calculateAccuracy();
 
   $(".val3").text(accuracy.toFixed(0) + "%");
 
-
+console
 
 
 }
@@ -58,7 +59,6 @@ function flipBack(){
   $(".modal").css("display", "");
   $(".flip-card-inner").removeClass("flipped");
   $(".flip-card").css("pointer-events", "");
-
 
 
 }
@@ -76,11 +76,6 @@ displayStats();
 function flipCard(event){
 
     $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped");
-
-
-
-// flipping.toggleClass('.flip-card-inner');
-  //$(event.currentTarget).find(".flip-card-inner").removeClass("flipped");
 
 
 
@@ -143,9 +138,6 @@ function flipCard(event){
         match2 = null;
 
       } else if (match1 === null || match2 === null) {
-
-
-
 
       } else if (match1 !== match2) {
 
