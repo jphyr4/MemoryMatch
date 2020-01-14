@@ -3,7 +3,7 @@ body{
   padding:0;
   background-image: url("../images/misfitsBack.jpg");
   background-position: center center;
-background-size: fixed;
+background-size: cover;
 
 }
 
@@ -17,12 +17,35 @@ background-size: fixed;
 
 }
 
+.screen{
+  min-height: 100vh;
+
+}
+
+.statsRow{
+  height: 150px;
+}
+
 .header {
   padding: 20px;
   text-align: center;
   color: white;
   font-size: 35px;
   font-family: Misfits;
+}
+
+.stats{
+  font-family: Misfits;
+  text-align: center;
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.statsCenter{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .col1{
@@ -38,24 +61,20 @@ justify-content: space-around;
 }
 
 .col2{
-  width: 80%;
+
   background-color: rgb(0, 0, 0, .5);
   display: flex;
-
   flex-direction: column;
   justify-content: space-around;
-
 }
 
 .column {
-  float: left;
-  padding: 10px;
-  height: 575px;
+
+  height: 100vh;
    /* Should be removed. Only for demonstration */
 }
 
 .row{
-  margin: 0 30px;
 
 }
 
@@ -85,7 +104,7 @@ justify-content: space-around;
   height: 150px;
   border: 0px solid #f1f1f1;
   perspective: 1000px;
-  padding: 10px;
+padding: 8px;
 display: inline-block;
 
    /* Remove this if you don't want the 3D effect */
@@ -142,6 +161,7 @@ display: inline-block;
 .gameRow{
   display:flex;
   justify-content: center;
+  justify-content: space-around;
 }
 
 .card1{
@@ -237,4 +257,15 @@ background-image: url("../images/collection.jpg");
 
 .disabled{
   pointer-events: none;
+}
+
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+
+.flip-card{
+  height: 100px;
+}
+
 }
