@@ -60,6 +60,7 @@ background-size: cover;
   color: white;
   display: table-cell;
   vertical-align: middle;
+  font-size: 3vh;
 }
 
 .statsCenter{
