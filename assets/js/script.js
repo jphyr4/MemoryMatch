@@ -150,7 +150,6 @@ function flipCard(event){
         setTimeout(function () {
           $(flipVar).toggleClass("flipped");
           $(secondflipVar).toggleClass("flipped");
-          //$(".flip-card").prop("disabled", false);
           $(".flip-card").removeClass("disabled");
         }, 1000);
 
@@ -171,12 +170,3 @@ function flipCard(event){
 
     }
 }
-
-
-
-console.log(attempts);
-console.log(gamesPlayed);
-
-
-
-//setTimeout(function () { $(event.currentTarget).find(".flip-card-inner").toggleClass("flipped"); }, 3000);
