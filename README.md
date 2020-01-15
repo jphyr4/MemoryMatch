@@ -22,7 +22,7 @@ Try the application live at [https://memorymatch.jhassler.tech]
 
 ## Preview
 
-
+![MemMatch](https://user-images.githubusercontent.com/35503354/72465190-92237300-378b-11ea-85ea-f175bfc3cba8.gif)
 
 #### Getting Started
 
